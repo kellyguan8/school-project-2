@@ -21,7 +21,7 @@ if not workspace then return end
 
 local lastScan = 0
 
-local function scan_workspace()
+local function scanWorkspace()
     local valid = {}
     for _, model in pairs(workspace:GetChildren()) do
         local orb = model:FindFirstChild("treeOrb")
@@ -63,7 +63,7 @@ local function scan_workspace()
     end
 end
 
-local function update_esp()
+local function updateESP()
     for _, info in pairs(trackedESP) do
         local root = info.root
         local text = info.text
@@ -96,7 +96,7 @@ local function update_esp()
     end
 end
 
-scan_workspace()
+scanWorkspace()
 
 while true do
     local now = os.clock()
